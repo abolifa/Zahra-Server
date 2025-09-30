@@ -1,0 +1,2 @@
+[07-Feb-2025 12:23:02 UTC] PHP Warning:  unlink(/home/alhabara/alhabara.com.ly/storage/logs/laravel-2024-10-24.log): No such file or directory in /home/alhabara/alhabara.com.ly/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php on line 172
+[16-Apr-2025 11:56:20 UTC] PHP Fatal error:  Declaration of App\Http\Controllers\API\Customer\ProductApiController::index(Illuminate\Http\Request $request) must be compatible with App\Http\Controllers\Controller::index() in /home/alhabara/alhabara.com.ly/app/Http/Controllers/API/Customer/ProductApiController.php on line 50

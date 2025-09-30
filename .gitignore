@@ -1,0 +1,34 @@
+# Laravel & PHP
+/vendor
+/node_modules
+
+# Laravel environment files
+.env.*.backup
+
+
+
+# Composer & NPM artifacts
+composer.phar
+yarn.lock
+npm-debug.log
+npm-error.log
+package-lock.json
+storage/app/public
+/public/js
+
+
+
+
+# IDE & OS generated files
+.idea
+.vscode
+.DS_Store
+Thumbs.db
+*.log
+
+# PHPUnit
+.phpunit.result.cache
+phpunit.xml.cache
+config/test.json
+.env
+.env.example

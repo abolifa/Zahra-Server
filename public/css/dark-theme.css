@@ -1,0 +1,25 @@
+.theme-switcher-wrap {
+  with: 100%;
+  text-align: right;
+}
+.theme-switcher-wrap .theme-switcher {
+  display: inline-block;
+  cursore: pointer;
+}
+.theme-switcher-wrap .theme-switcher .switch-path {
+  background-color: #ccc;
+}
+.theme-switcher-wrap .theme-switcher .switch-path .switch-handle {
+  background-color: #999;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.theme-switcher-wrap .theme-switcher.active .switch-path {
+  background-color: #555;
+}
+.theme-switcher-wrap .theme-switcher.active .switch-handle {
+  background-color: #7bbb5e;
+  transform: translateX(20px);
+}

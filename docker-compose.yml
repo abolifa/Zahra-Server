@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+    zahra:
+        build: .
+        container_name: zahra-php
+        volumes:
+            - ./:/var/www
+        environment:
+            - APP_ENV=production
+            - APP_DEBUG=false
+            - APP_URL=https://zahra.com.ly
+        networks:
+            - webproxy
+        labels:
+            - "VIRTUAL_HOST=zahra.com.ly"
+            - "LETSENCRYPT_HOST=zahra.com.ly"
+            - "LETSENCRYPT_EMAIL=info@romuz.com.ly"
+
+    db:
+        image: mariadb:10.6
+        container_name: zahra-db
+        restart: always
+        environment:
+            - MYSQL_ROOT_PASSWORD=Kishmee@mgcd5
+            - MYSQL_DATABASE=zahra
+            - MYSQL_USER=zahra
+            - MYSQL_PASSWORD=YourAppDBPassword
+        volumes:
+            - db_data:/var/lib/mysql
+        networks:
+            - webproxy
+
+volumes:
+    db_data:
+
+networks:
+    webproxy:
+        external:
+            name: nginx-proxy
