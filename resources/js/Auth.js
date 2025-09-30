@@ -30,9 +30,9 @@ class Auth {
     }
 
     logout () {
-        let role_id = this.user.role_id;
+        let role_id = this.user?.role_id;
         console.log("Logout");
-        //return;
+
         window.localStorage.clear();
         window.localStorage.removeItem('token');
         window.localStorage.removeItem('user');
@@ -43,27 +43,18 @@ class Auth {
         } else if (role_id === 4) {
             window.location.replace('/delivery_boy/login');
         } else {
-            window.location.replace('login');
+            window.location.replace('/login');
         }
         this.user = null;
     }
 
-    validate(currentRoute=null){
-        var currentPathName = window.location.pathname;
-        if(currentRoute) {
-            currentPathName = currentRoute;
-        }
-        var ignoreRoutes = ["/purchase_code","/login","/seller/login","/delivery_boy/login"];
-        if(!purchase_code && !ignoreRoutes.includes(currentPathName)){
+    validate(currentRoute = null) {
+        let currentPathName = currentRoute || window.location.pathname;
+        let ignoreRoutes = ["/purchase_code", "/login", "/seller/login", "/delivery_boy/login"];
+        if (!window.AppConfig?.isInstalled && !ignoreRoutes.includes(currentPathName)) {
             window.location.href = '/purchase_code';
-            /*axios.get('api/validate').then((res) => {
-                console.log("validate res : ",res);
-                if(res.data && res.data.status===1){
-                    window.location.href = '/purchase_code';
-                    console.log("Redirect --> purchase_code");
-                }
-            });*/
         }
     }
 }
+
 export default new Auth();

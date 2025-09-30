@@ -17,5 +17,4 @@ messaging.setBackgroundMessageHandler(function (payload) {
         icon: notification.icon,
     };
     return self.registration.showNotification(title, options);
-    //return self.registration.showNotification(title,{body,icon});
 });
